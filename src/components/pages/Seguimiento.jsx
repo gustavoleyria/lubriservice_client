@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios'; // Importa Axios
 
 // URL
@@ -80,8 +81,11 @@ const Seguimiento = () => {
                 <td className="border p-2 border-gray-700">{trabajo.terminado ? 'Sí' : 'No'}</td>
                 <td className="border p-2 hidden sm:table-cell border-gray-700">{trabajo.facturado ? 'Sí' : 'No'}</td>
                 <td className="border p-2 hidden sm:table-cell border-gray-700">{trabajo.km}</td>
-                <td className="border p-2 border-gray-700">
+                {/* <td className="border p-2 border-gray-700">
                   <a href={`/detalleOrden/${trabajo.orden}`}>Detalle</a>
+                </td> */}
+                <td className="border p-2 border-gray-700">
+                  <Link to={`/detalleOrden/${trabajo.orden}`}>Detalle</Link>
                 </td>
               </tr>
             ))}
